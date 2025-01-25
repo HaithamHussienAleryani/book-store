@@ -1,11 +1,22 @@
+import { cn } from "@/lib/utils";
+import { Book } from "@/types/Book";
 import React from "react";
+import BookCard from "./BookCard";
 
-function BookList() {
+interface Props {
+  title: string;
+  books: Book[];
+  containerClassName: string;
+}
+function BookList({ title, books, containerClassName }: Props) {
   return (
-    <section>
-      <h2 className="font-bebas-neue  text-light-100 text-4xl ">
-        Popular books
-      </h2>
+    <section className={cn(containerClassName)}>
+      <h2 className="font-bebas-neue  text-light-100 text-4xl ">{title}</h2>
+      <ul className="book-list">
+        {books.map((book) => (
+          <BookCard key={book.title} {...book} />
+        ))}
+      </ul>
     </section>
   );
 }
