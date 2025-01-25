@@ -1,7 +1,15 @@
+import BookList from "@/components/BookList";
+import BookOverview from "@/components/BookOverview";
+
 import React from "react";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <BookOverview />
+      <BookList />
+    </>
+  );
 }
 
 export default Home;
