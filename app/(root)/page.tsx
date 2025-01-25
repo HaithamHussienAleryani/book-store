@@ -8,7 +8,11 @@ function Home() {
   return (
     <>
       <BookOverview book={{ ...sampleBooks[0] }} />
-      <BookList />
+      <BookList
+        title="Latest books"
+        books={sampleBooks}
+        containerClassName="mt-28"
+      />
     </>
   );
 }
